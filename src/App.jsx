@@ -90,9 +90,9 @@ function App() {
   };
 
   const handleEvery = function () {
-    const everyResult = arr.every((item) => item.includes(query));
-    setResult(everyResult ? "true" : "false");
-  };
+    const everyResult = arr.every(item => item.length >= 2)
+    setResult(everyResult ? "true" : "false")
+  }
 
   const handleSort = function () {
     const sorted = arr.sort()
