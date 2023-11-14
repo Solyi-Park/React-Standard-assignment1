@@ -68,16 +68,17 @@ function App() {
 
   const handleIndexOf = function () {
     const indexOfItem = arr.indexOf(query);
-    setResult(indexOfItem);
+    setResult(indexOfItem); //.toString 넣어주기 
   };
 
   const handleIncludes = function () {
     const includesItem = arr.includes(query);
     //  console.log(includesItem) // true/false
     //  setResult(includesItem); 이렇게는 작동 안함.
-    setResult(includesItem ? "true" : "false");
+    setResult(includesItem ? "true" : "false");//.toString 넣어주기 
   };
 
+  //filter() ~~~ ===> [0]
   const handleFind = function () {
     const findItem = arr.find((item) => item.includes(query));
     const found = findItem !== undefined ? findItem : "NotFound";
@@ -86,16 +87,17 @@ function App() {
 
   const handleSome = function () {
     const someResult = arr.some((item) => item.includes(query));
-    setResult(someResult ? "true" : "false");
+    setResult(someResult ? "true" : "false");//.toString 넣어주기 
   };
 
   const handleEvery = function () {
     const everyResult = arr.every(item => item.length >= 2)
-    setResult(everyResult ? "true" : "false")
+    setResult(everyResult ? "true" : "false")//.toString 넣어주기 
   }
 
   const handleSort = function () {
-    const sorted = arr.sort()
+    const sorted = arr.sort() //전개연산자 사용
+    // setAray 값 할당해주기
     setResult(sorted.join(", "));
   };
 
